@@ -55,7 +55,7 @@ export default function Arrow({
       setLocalFill(fill)
     }}>
 
-      <path className={classNames.icon} fill={localFill} fill-rule="evenodd" d="M9.293 6.707a1 1 0 1 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 1 1-1.414-1.414L14.586 12 9.293 6.707z"/>
+      <path className={classNames.icon} fill={localFill} fillRule="evenodd" d="M9.293 6.707a1 1 0 1 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 1 1-1.414-1.414L14.586 12 9.293 6.707z"/>
 
     </svg>
   )
