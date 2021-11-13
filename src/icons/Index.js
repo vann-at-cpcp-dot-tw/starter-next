@@ -1,9 +1,12 @@
+import dynamic from 'next/dynamic'
+
 const Components = {
-  X: React.lazy(()=>import('src/icons/X')),
+  Arrow: dynamic(() => import('src/icons/Arrow')),
+  X: dynamic(() => import('src/icons/X'))
 }
 
 export default function Icon(props){
-  return(<React.Suspense fallback={null}>
+  return(<>
   {(()=>{
 
     if (typeof Components[props.type] !== "undefined") {
@@ -20,5 +23,5 @@ export default function Icon(props){
       { key: props._uid }
     )
   })()}
-  </React.Suspense>)
+  </>)
 }
