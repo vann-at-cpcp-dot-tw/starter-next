@@ -1,4 +1,4 @@
-export default function Sample({
+export default function Arrow({
   width,
   height,
   style = {},
@@ -16,7 +16,7 @@ export default function Sample({
 
   const [localFill, setLocalFill] = React.useState(fill)
 
-  React.useMemo(()=>{
+  const rotate = React.useMemo(()=>{
     switch(direction){
       case 'right':
           return 'rotate(0deg)'
@@ -42,7 +42,7 @@ export default function Sample({
     style={{
       width: typeof width === 'number' ?`${width}px` :width,
       height: typeof height === 'number' ?`${height}px` :height,
-      transform: state.rotate,
+      transform: rotate,
       ...style,
     }}
     className={`${className} ${classNames?.svg}`}
@@ -55,7 +55,7 @@ export default function Sample({
       setLocalFill(fill)
     }}>
 
-      <path className={classes.path} fill={localFill} fill-rule="evenodd" d="M9.293 6.707a1 1 0 1 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 1 1-1.414-1.414L14.586 12 9.293 6.707z"/>
+      <path className={classNames.icon} fill={localFill} fill-rule="evenodd" d="M9.293 6.707a1 1 0 1 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 1 1-1.414-1.414L14.586 12 9.293 6.707z"/>
 
     </svg>
   )
